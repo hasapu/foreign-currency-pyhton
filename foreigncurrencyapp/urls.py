@@ -15,7 +15,11 @@ from rest_framework.routers import DefaultRouter
 from . import views
 
 router = DefaultRouter()
+router.register('currency-from', views.CurrencyFromViewSet)
+router.register('currency-to', views.CurrencyToViewSet)
 router.register('exchanges', views.ExchangeViewSet)
+router.register('daily-rate', views.DailyRateViewSet)
+
 
 urlpatterns = [
     url(r'', include(router.urls))
